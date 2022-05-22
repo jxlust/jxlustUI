@@ -1,7 +1,7 @@
 // src/index.ts
 import { App } from 'vue';
 import MyButton from './MyButton/index';
-import { version } from "../package.json";
+import Version from "../package.json";
 import "./MyButton/index.scss";
 
 const components = [MyButton];
@@ -17,6 +17,7 @@ const install: PluginInstallFunction = (app: App) => {
 // if (typeof window !== "undefined" && window.Vue) {
 //   install(window.Vue);
 // }
+const version = Version.version;
 export { MyButton, install };
 // 导出
 export default {
