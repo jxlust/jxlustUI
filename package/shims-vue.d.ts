@@ -6,5 +6,6 @@ declare module '*.vue' {
 }
 declare module '*.json' {
   const value: any;
+  export {};
   export default value;
 }

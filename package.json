@@ -1,5 +1,5 @@
 {
-  "name": "jxlustUI",
+  "name": "jxlustui",
   "version": "1.0.0",
   "description": "jxlust Vue3 UI库",
   "main": "lib/bundle.esm.js",
@@ -20,8 +20,9 @@
     "url": "git@github.com:jxlust/jxltools.git"
   },
   "keywords": [
-    "toolkit",
     "rollup",
+    "vue3",
+    "UI",
     "typescript"
   ],
   "author": "jxlust",

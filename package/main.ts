@@ -1,11 +1,8 @@
 // src/index.ts
 import { App } from 'vue';
 import MyButton from './MyButton/index';
-
 import { version } from "../package.json";
-
 import "./MyButton/index.scss";
-
 
 const components = [MyButton];
 // 定义 install 函数类型
@@ -17,7 +14,9 @@ const install: PluginInstallFunction = (app: App) => {
     app.component(component.name, component);
   });
 };
-
+// if (typeof window !== "undefined" && window.Vue) {
+//   install(window.Vue);
+// }
 export { MyButton, install };
 // 导出
 export default {
