@@ -1,0 +1,76 @@
+{
+  "name": "jxlustUI",
+  "version": "1.0.0",
+  "description": "jxlust Vue3 UI库",
+  "main": "lib/bundle.esm.js",
+  "jsnext:main": "lib/bundle.esm.js",
+  "module": "lib/bundle.esm.js",
+  "browser": "dist/index.js",
+  "scripts": {
+    "dev": "npx rollup -w -m -c rollup.config.dev.js",
+    "build": "rollup -c rollup.config.js && npm run copy",
+    "publish": "node scripts/publish.js",
+    "copy": "cp package.json README.md lib",
+    "test": "ts-node test/test.ts",
+    "lint": "eslint 'src/**/*.{js,ts}'",
+    "prettier": "prettier --write --loglevel log 'src/**/*.{js,json,tsx,css,less,scss,vue,html,md,ts}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jxlust/jxltools.git"
+  },
+  "keywords": [
+    "toolkit",
+    "rollup",
+    "typescript"
+  ],
+  "author": "jxlust",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "@babel/preset-typescript": "^7.17.12",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-eslint": "^8.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "commander": "^9.2.0",
+    "eslint": "^8.16.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "rollup": "^2.74.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-scss": "^3.0.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "shelljs": "^0.8.5",
+    "tslib": "^2.4.0",
+    "typescript": "^4.6.4",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*./src/**/*.{js,ts,json,css,less,md}": [
+      "npm run prettier",
+      "npm run lint"
+    ]
+  },
+  "dependencies": {
+    "core-js": "^3.22.5",
+    "vue": "^3.2.35",
+    "vue-loader": "^17.0.0",
+    "vue-router": "^4.0.15",
+    "vuex": "^4.0.2"
+  }
+}
