@@ -137,6 +137,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       rollupOptions: {
         input: {
           main: resolve(__dirname, 'index.html'),
+
           // preview: resolve(__dirname, 'preview/index.html'),
         },
         output: {
