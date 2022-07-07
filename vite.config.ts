@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
 import { resolve } from 'path';
-import { ElementPlusResolver, VantResolver } from 'unplugin-vue-components/resolvers';
+// import { ElementPlusResolver, VantResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import WindiCSS from 'vite-plugin-windicss';
@@ -54,7 +54,8 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       //组件按需引入插件
       Components({
         dts: true,
-        resolvers: [ElementPlusResolver(), VantResolver()],
+        // resolvers: [ElementPlusResolver(), VantResolver()],
+        resolvers: [],
       }),
       compressPlugin({
         ext: '.gz',
@@ -108,7 +109,13 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       alias: [
         {
           find: '@',
-          replacement: resolve(__dirname, './src'),
+          // replacement: resolve(__dirname, './'),
+          replacement: resolve(__dirname, './examples'),
+        },
+        {
+          find: '@pk',
+          // replacement: resolve(__dirname, './'),
+          replacement: resolve(__dirname, './package'),
         },
       ],
     },
@@ -129,7 +136,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       },
       rollupOptions: {
         input: {
-          main: resolve(__dirname, 'public/index.html'),
+          main: resolve(__dirname, 'index.html'),
           // preview: resolve(__dirname, 'preview/index.html'),
         },
         output: {
@@ -144,11 +151,12 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       },
     },
     optimizeDeps: {
-      include: ['@vueuse/core', 'element-plus', 'vant', 'lodash-es', 'vuedraggable'],
+      // 'element-plus', 'vant' ,'vuedraggable
+      include: ['@vueuse/core', 'lodash-es'],
     },
     server: {
       host: '0.0.0.0',
-      port: 8080, // 设置服务启动端口号
+      port: 8089, // 设置服务启动端口号
       open: false, // 设置服务启动时是否自动打开浏览器
       cors: true, // 允许跨域
 

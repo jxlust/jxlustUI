@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-const HelloWorld = () => import('@/package/MyButton/index.vue');
+const HelloWorld = () => import('@pk/MyButton/index.vue');
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',

@@ -7,7 +7,7 @@ import router from './router';
 // import Vconsole from 'vconsole'
 
 // import store from './store'
-import './styles/css/base.css';
+// import './styles/css/base.css';
 // import './assets/css/main.styl';
 // import BaseComponents from './components/base'
 // import BaseDirective from './directive'
