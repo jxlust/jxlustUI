@@ -90,7 +90,7 @@
       "editor.codeActionsOnSave": {
         "source.fixAll.eslint": false
       },
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "Vue.volar"
     },
     "i18n-ally.localesPaths": [
       "src/locales/lang"
